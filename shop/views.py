@@ -4,6 +4,14 @@ from .models import Category, Product
 from cart.forms import CartAddProductForm
 
 # Create your views here.
+def index(request):
+     return render(request, 'shop/index.html')
+ 
+def submit(request):
+    a = request.POST(['initial'])
+    return render(request, 'shop/shop.html', {
+        'error_message': "returned"
+    })
 
 def product_list(request, category_slug=None):
     category = None
