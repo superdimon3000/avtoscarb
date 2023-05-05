@@ -9,7 +9,7 @@ def index(request):
  
 def submit(request):
     a = request.POST(['initial'])
-    return render(request, 'shop/shop.html', {
+    return render(request, 'shop/index.html', {
         'error_message': "returned"
     })
 
