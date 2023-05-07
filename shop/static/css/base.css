@@ -150,31 +150,40 @@ ul.errorlist {
 #subheader .cart {
     color:#ffffff;
     float:right;
-    padding-top:4px;
+    padding-top:11px;
 }
 
-#subheader .d1 input {
+.d1 form {
+    position: relative;
     width: 70%;
-    height: 35px;
-    padding-left: 10px;
+    height: 1px;
+    float: left;
+    background-color:#0bc0b1;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .d1 input {
+    width: 100%;
+    height: 42px;
     border: 2px solid #7BA7AB;
     border-radius: 5px;
     outline: none;
     background: #F9F0DA;
     color: #9E9C9C;
-    float: left;
   }
-
-#subheader .d1 button {
+  .d1 button {
+    position: absolute; 
+    top: 6px;
+    right: 0px;
     width: 42px;
-    height: 40px;
+    height: 36px;
     border: none;
     background: #7BA7AB;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    float: left;
   }
-#subheader .d1 button:before {
+  .d1 button:before {
     content: "\f002";
     font-family: FontAwesome;
     font-size: 16px;
