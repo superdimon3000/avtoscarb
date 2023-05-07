@@ -401,7 +401,8 @@ form {
   form input[type="submit"]:hover {
     background-color: #e53935;
   }
-.btn{
+
+  .btn{
     display: block;
     
     min-width: 15%;

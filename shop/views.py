@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-
+from django.db.models import Q
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 
@@ -33,3 +33,11 @@ def product_detail(request, id, slug):
         'product': product,
         'cart_product_form': cart_product_form,
     })
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        results = Product.objects.filter(name__icontains=query, available=True)
+    else:
+        results = []
+    return render(request, 'shop/search.html', {'results': results, 'query': query})
