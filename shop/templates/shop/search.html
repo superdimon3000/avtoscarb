@@ -6,14 +6,7 @@
     <p>Результаты по запросу "{{ query }}":</p>
     {% if results %}
         <ul>
-            <div id="main" class="product-list">
-                <h1>
-                    {% if category %}
-                        {{ category.name }}
-                    {% else %}
-                        Товар
-                    {% endif %}
-                </h1>
+            <div class="product-search">
                 {% for product in results %}
                     <div class="item">
                         <a href="{{ product.get_absolute_url }}">
@@ -27,6 +20,7 @@
                         ₴ {{ product.price }}
                     </div>
                 {% endfor %}
+            <div> 
         </ul>
     {% else %}
         <p>Нет результатов для вашего запроса.</p>

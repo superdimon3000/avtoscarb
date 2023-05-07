@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My shop{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="header">
@@ -21,11 +22,10 @@
         {% endif %}
     </div>
     <div id="subheader">
-        <a href="/" class="menu">На головну</a>
-        <form action="{% url 'shop:search' %}" method="get">
-            <input type="text" name="q" placeholder="Поиск товаров">
-            <button type="submit">Найти</button>
-        </form>
+        <div class="d1">
+                <input type="text" placeholder="Искать здесь...">
+                <button type="submit"></button>          
+        </div>     
         <div class="cart">
             {% with total_items=cart|length %}
                 {% if total_items > 0 %}
