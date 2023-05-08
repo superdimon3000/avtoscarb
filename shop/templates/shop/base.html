@@ -17,8 +17,8 @@
             <a href="/" class="account">Привіт, {{ user.username }}.</a>
             <a href="{% url 'users:logout' %}" class="account">Вихід</a>
         {% else %}
-            <a href="{% url 'users:register' %}" class="account">Реєстрація</a> 
             <a href="{% url 'users:login' %}" class="account">Вхід</a>
+            <a href="{% url 'users:register' %}" class="account">Реєстрація</a> 
         {% endif %}
     </div>
     <div id="subheader">
