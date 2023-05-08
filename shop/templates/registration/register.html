@@ -1,6 +1,6 @@
 {% extends "shop/base.html" %}
 {% block content %}
-    <form method="post" action="{% url 'users:register' %}">
+    <form id="login-form" method="post" action="{% url 'users:register' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn" name="submit">Реестрація</button>
