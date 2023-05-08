@@ -15,9 +15,9 @@ def order_create(request):
             for item in cart:
                 OrderItem.objects.create(
                     order=order,
-                    product=item['Товар'],
-                    price=item['Ціна'],
-                    quantity=item['Кількість']
+                    product=item['product'],
+                    price=item['price'],
+                    quantity=item['quantity']
                 )
             cart.clear()
             return render(request, template_name='orders/order/created.html', context={'order': order})
