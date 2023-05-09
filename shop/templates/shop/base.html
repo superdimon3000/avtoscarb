@@ -58,10 +58,10 @@
             <div class="col-md-4">
               <h4>Корисні посилання</h4>
               <ul>
-                <li><a href="#">Про нас</a></li>
-                <li><a href="#">Умови використання сайту</a></li>
-                <li><a href="#">Співпраця з нами</a></li>
-                <li><a href="#">Гарантія</a></li>
+                <li><a href="{% url 'shop:about' %}">Про нас</a></li>
+                <li><a href="{% url 'shop:terms' %}">Умови використання сайту</a></li>
+                <li><a href="{% url 'shop:collaboration' %}">Співпраця з нами</a></li>
+                <li><a href="{% url 'shop:guarantee' %}">Гарантія</a></li>
               </ul>
             </div>
             <div class="col-md-4">

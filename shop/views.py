@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Category, Product
 from cart.forms import CartAddProductForm
+from django.views.generic import TemplateView
 
 # Create your views here.
 def index(request):
@@ -52,3 +53,15 @@ def search(request):
     else:
         results = []
     return render(request, 'shop/search.html', {'results': results, 'query': query})
+
+class TermsView(TemplateView):
+    template_name = 'informations/terms.html'
+    
+class AboutView(TemplateView):
+    template_name = 'informations/about.html'
+    
+class CollaborationView(TemplateView):
+    template_name = 'informations/collaboration.html'
+    
+class GuaranteeView(TemplateView):
+    template_name = 'informations/guarantee.html'

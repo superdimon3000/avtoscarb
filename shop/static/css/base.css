@@ -184,7 +184,7 @@ ul.errorlist {
     border: 2px solid #7BA7AB;
     border-radius: 5px;
     outline: none;
-    background: #F9F0DA;
+    background: #ffffff;
     color: #9E9C9C;
   }
   .d1 button {
@@ -265,7 +265,7 @@ ul.errorlist {
 
 #main {
     float:left;
-    width: 93%;
+    width: 92%;
     margin-right:-220px;
     overflow:hidden;
 }
@@ -283,7 +283,7 @@ ul.errorlist {
 }
 
 .product-list .item {
-    width:300px;
+    width:295px;
     height:350px;
     padding:10px 5px 5px 5px;
     float:left;
@@ -557,7 +557,7 @@ form div.field {
   
   .pagination .current-page {
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
     background-color: #333;
     border-color: #333;
   }
@@ -569,7 +569,7 @@ form div.field {
   }
 
   footer {
-    width: 95%;
+    width: 90%;
     float: center;
     background-color: #f8f8f8;
     padding: 40px 0;
