@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 
@@ -13,6 +13,7 @@ def submit(request):
         'error_message': "returned"
     })
 
+
 def product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
@@ -20,10 +21,20 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
-    return render (request, 'shop/product/list.html', context={
+    paginator = Paginator(products, 12)  # Ограничение количества товаров на странице до 12
+    page_number = request.GET.get('page')
+    try:
+        page_obj = paginator.get_page(page_number)
+    except PageNotAnInteger:
+        # Если параметр page не является целым числом, выводим первую страницу
+        page_obj = paginator.get_page(1)
+    except EmptyPage:
+        # Если номер страницы больше, чем общее количество страниц, выводим последнюю страницу
+        page_obj = paginator.get_page(paginator.num_pages)
+    return render(request, 'shop/product/list.html', context={
         'category': category,
         'categories': categories,
-        'products': products,
+        'products': page_obj,
     })
 
 def product_detail(request, id, slug):

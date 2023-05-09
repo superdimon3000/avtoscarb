@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My shop{% endblock title %}</title>
+    <title>{% block title %}Автоскарб{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
@@ -24,7 +24,7 @@
     <div id="subheader">
         <div class="d1">
             <form method="get" action="{% url 'shop:search' %}">
-                <input  type="text" name="q" placeholder="Шуаєш товар за назвою? Тобі сюди...">
+                <input  type="text" name="q" placeholder="Шукаєш товар за назвою? Тобі сюди...">
                 <button type="submit"></button>          
             </form>
         </div>     
@@ -46,5 +46,36 @@
         {% block content %}
         {% endblock content %}
     </div>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>Про нас</h4>
+              <p>Ми магазин автоаксесуарів пропонує широкий асортимент товарів для тюнінгу та облаштування автомобілів. 
+                Ми працюємо тільки з перевіреними постачальниками і гарантуємо високу якість товарів. У нашому магазині 
+                ви знайдете все необхідне для поліпшення зовнішнього вигляду і функціональності вашого автомобіля.</p>
+            </div>
+            <div class="col-md-4">
+              <h4>Корисні посилання</h4>
+              <ul>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Умови використання сайту</a></li>
+                <li><a href="#">Співпраця з нами</a></li>
+                <li><a href="#">Гарантія</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Контакти</h4>
+              <p>Адреса: проспект Героїв Сталінграду, 45<br>Харків, Харківська область<br>Телефон: +380-98-906-8060<br>Email: avtoskarb@gmail.com</p>
+            </div>
+            <div class="cart">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5135.093529801347!2d36.27879659999994!3d49.944845155691276!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41270b573b6ec593%3A0x387a8d446d9a6d0!2z0JDQstGC0L7RgdC60LDRgNCx!5e0!3m2!1suk!2sro!4v1683621886285!5m2!1suk!2sro" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <hr>
+          <p>&copy; 2023 MySite.com. Всі права захищені..</p>
+        </div>
+      </footer>
+      
 </body>
 </html>

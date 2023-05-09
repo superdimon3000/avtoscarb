@@ -130,6 +130,16 @@ ul.errorlist {
     overflow:auto;
     background:#0bc0b1;
 }
+@media (max-width: 768px) {
+    #header {
+    padding: 2px 30px;
+    font-size: 16px;
+    }
+    
+    #subheader {
+    padding: 10px 30px;
+    }
+    }
 
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
@@ -146,6 +156,11 @@ ul.errorlist {
     padding-top:20px;
     
 }
+@media (max-width: 768px) {
+    #header .account {
+        font-size:17px;   
+    }
+    }
 
 #subheader .cart {
     color:#ffffff;
@@ -155,7 +170,7 @@ ul.errorlist {
 
 .d1 form {
     position: relative;
-    width: 70%;
+    width: 80%;
     
     float: left;
     background-color:#0bc0b1;
@@ -230,16 +245,46 @@ ul.errorlist {
     color:#fff;
 }
 
+@media screen and (max-width: 1100px) {
+    #sidebar {
+        width: 100%;
+        margin: 0;
+    }
+
+    #sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #sidebar li {
+        width: 50%;
+        text-align: center;
+    }
+}
+
 #main {
     float:left;
-    width: 96%;
+    width: 93%;
     margin-right:-220px;
     overflow:hidden;
 }
 
+.product-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    box-orient: vertical; 
+}
+
 .product-list .item {
-    width:25%;
-    height:400px;
+    width:350px;
+    height:350px;
     padding:10px 5px 5px 5px;
     float:left;
     text-align:center;
@@ -252,10 +297,31 @@ ul.errorlist {
 
 .product-list .item img {
     width:97%;
-    height:300px;
+    height:250px;
     margin-bottom:8px;
 }
-
+@media (max-width: 1100px) {
+    .product-list .item {
+      width: 35%;
+      height:200px;
+      float: center;
+    }
+    .product-list .item img {
+        width:70%;
+        height:50%;
+  }
+    .product-name{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        box-orient: vertical; 
+    }
+}
 .product-search .item {
     width:28%;
     height:400px;
@@ -467,3 +533,94 @@ form div.field {
     font-size: 16px;
     color: #fff; 
 }
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    clear: both;
+  }
+  
+  .pagination a,
+  .pagination span {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    margin: 0 2px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .pagination .current-page {
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+  }
+  
+  .pagination .disabled {
+    color: #999;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  footer {
+    width: 90%;
+    float: center;
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    font-size: 14px;
+    padding-left: 50px;
+  }
+  
+  footer h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  footer p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  footer .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  footer .col-md-4 {
+    width: 26%;
+  }
+  
+  @media (max-width: 1100px) {
+    footer .col-md-4 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
