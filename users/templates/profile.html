@@ -1,0 +1,10 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+    <h1>Profile page for {{ user.username }}</h1>
+    <ul>
+        <li>First Name: {{ user.first_name }}</li>
+        <li>Last Name: {{ user.last_name }}</li>
+        <li>Email: {{ user.email }}</li>
+    </ul>
+{% endblock %}
