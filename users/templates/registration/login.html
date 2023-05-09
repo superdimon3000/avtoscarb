@@ -2,19 +2,19 @@
 
 {% block title %}Log-in{% endblock %}
 {% block content %}
-    <h1>Log-in</h1>
+    <h1>Вхід в систему</h1>
     {% if form.errors %}
         <p>
-            Your username and password didn't match.
-            Please try again.
+            Ваше ім'я користувача та пароль не збігаються.
+            Спробуйте ще раз.
         </p>
     {% else %}
-        <p>Please, use the following form to log-in:</p>
+        <p>Будь ласка, використовуйте наступну форму для входу:</p>
     {% endif %}
     <form action="." method="post">
         {{ form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Log-in"></p>
+        <p><input type="submit" value="Вхід"></p>
         <input type="hidden" name="next" value="{% url 'shop:product_list' %}">
     </form>
 {% endblock %}

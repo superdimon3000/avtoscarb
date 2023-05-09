@@ -3,11 +3,11 @@
 {% block title %}Create an account{% endblock %}
 
 {% block content %}
-    <h1>Create an account</h1>
-    <p>Please, sign up using the following form:</p>
+    <h1>Створіть обліковий запис</h1>
+    <p>Будь ласка, зареєструйтесь, заповнивши наступну форму:</p>
     <form action="." method="post">
         {{ user_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
+        <p><input type="submit" value="Створити обліковий запис"></p>
     </form>
 {% endblock %}
