@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm
-from django.contrib.auth.models import User
+from orders.models import Order
 
 def user_login(request):
     if request.method == 'POST':
@@ -38,5 +38,9 @@ def register(request):
     return render(request, 'registration\\register.html', {'user_form': user_form})
 
 def user_profile(request, username):
-    user = get_object_or_404(User, username=username)
-    return render(request, 'profile.html', {'user': user})
+    user_orders = Order.objects.filter(user=request.user)
+    context = {
+        'user': request.user,
+        'orders': user_orders,
+    }
+    return render(request, 'profile.html', context)

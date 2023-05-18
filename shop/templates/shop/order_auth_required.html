@@ -1,0 +1,14 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+  <div>
+    <div>
+      <h3>Для оформлення замовлення необхідно увійти до свого акаунту або зареєструватись</h3>
+      <p>Щоб продовжити, будь ласка, увійдіть в свій акаунт або зареєструйтеся за посиланнями нижче.</p>
+      <div>
+        <a type="submit" href="{% url 'users:login' %}" role="button">Увійти</a>
+        <a type="submit" href="{% url 'users:register' %}" role="button">Зареєструватись</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
