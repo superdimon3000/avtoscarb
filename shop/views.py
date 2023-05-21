@@ -4,16 +4,11 @@ from .models import Category, Product
 from cart.forms import CartAddProductForm
 from django.views.generic import TemplateView
 
-# Create your views here.
-def index(request):
-     return render(request, 'shop/index.html')
- 
 def submit(request):
-    a = request.POST(['initial'])
+    a = request.POST['initial']
     return render(request, 'shop/index.html', {
         'error_message': "returned"
     })
-
 
 def product_list(request, category_slug=None):
     category = None
@@ -22,16 +17,12 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
-    paginator = Paginator(products, 12)  # Ограничение количества товаров на странице до 12
+    paginator = Paginator(products, 12)
     page_number = request.GET.get('page')
     try:
         page_obj = paginator.get_page(page_number)
-    except PageNotAnInteger:
-        # Если параметр page не является целым числом, выводим первую страницу
+    except (PageNotAnInteger, EmptyPage):
         page_obj = paginator.get_page(1)
-    except EmptyPage:
-        # Если номер страницы больше, чем общее количество страниц, выводим последнюю страницу
-        page_obj = paginator.get_page(paginator.num_pages)
     return render(request, 'shop/product/list.html', context={
         'category': category,
         'categories': categories,
@@ -56,12 +47,12 @@ def search(request):
 
 class TermsView(TemplateView):
     template_name = 'informations/terms.html'
-    
+
 class AboutView(TemplateView):
     template_name = 'informations/about.html'
-    
+
 class CollaborationView(TemplateView):
     template_name = 'informations/collaboration.html'
-    
+
 class GuaranteeView(TemplateView):
     template_name = 'informations/guarantee.html'

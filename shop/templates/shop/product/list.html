@@ -5,7 +5,7 @@
     {% if category %}
         {{ category.name}}
     {% else %}
-        Products
+        Всі товари
     {% endif %}
 {% endblock title %}
 
@@ -29,7 +29,7 @@
             {% if category %}
                 {{ category.name }}
             {% else %}
-                Товар
+                Всі товари
             {% endif %}
         </h1>
         {% for product in products %}
