@@ -129,5 +129,3 @@ dmypy.json
 .pyre/
 
 # Product images
-products/
-image/
